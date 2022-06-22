@@ -1,0 +1,13 @@
+1-In CukesRunner, Make sure you have the exact same names of feature and step definitions packages
+  (in features and glue)
+
+2-Make sure you don't have any duplicated step definitions
+
+3-Make sure there isn't any white space in values in configuration.properties file
+
+4-Make sure your page classes extend to BasePage
+
+5-Make sure you don't have duplicated Scenario Names
+  (each scenario name must be unique)
+
+6-Make sure you place the tagname before the Feature name or Scenario name
