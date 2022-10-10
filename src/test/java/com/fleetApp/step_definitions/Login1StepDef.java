@@ -32,6 +32,7 @@ public class Login1StepDef {
 	@When("The user logs in as a store manager")
 	public void the_user_logs_in_as_a_store_manager() {
 		loginPage.loginAsStoreManager();
+		homePage.waitUntilLoaderScreenDisappear();
 	}
 
 	@Then("The user is on the Quick Launchpad page")

@@ -30,7 +30,6 @@ public class Login1Page extends BasePage {
 		usernameField.sendKeys(username);
 		passwordField.sendKeys(password);
 		loginBtn.click();
-		waitUntilLoaderScreenDisappear();
 	}
 
 	public void loginAsSalesManager(){
@@ -40,7 +39,6 @@ public class Login1Page extends BasePage {
 		usernameField.sendKeys(username);
 		passwordField.sendKeys(password);
 		loginBtn.click();
-		waitUntilLoaderScreenDisappear();
 	}
 
 	public void loginAsStoreManager(){
@@ -50,7 +48,6 @@ public class Login1Page extends BasePage {
 		usernameField.sendKeys(username);
 		passwordField.sendKeys(password);
 		loginBtn.click();
-		waitUntilLoaderScreenDisappear();
 	}
 
 

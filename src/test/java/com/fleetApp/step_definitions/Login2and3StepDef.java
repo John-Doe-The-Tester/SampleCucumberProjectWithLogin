@@ -35,7 +35,7 @@ public class Login2and3StepDef {
 	@When("The user tries to login with {string} and {string}")
 	public void the_user_tries_to_login_with_and(String username, String password) {
 		login2and3Page.loginWithCredentials(username,password);
-		BrowserUtils.sleep(2);
+		homePage.waitUntilLoaderScreenDisappear();
 	}
 
 	@Then("The user can not login and page title is {string}")
