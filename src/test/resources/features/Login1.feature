@@ -20,8 +20,6 @@ Feature: Login 1 - Without any parameter
     Then The user is on the Dashboard page
 
 
-
-
 #  given: pre-condition
 #  when: action
 #  then: verification / assertion
