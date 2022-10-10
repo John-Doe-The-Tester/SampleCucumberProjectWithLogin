@@ -1,10 +1,9 @@
-@NV-1357
+
 Feature: Login 3 - With parameters and Scenario Outline
 
   Background:
     Given The user is on the login page
 
-  @NV-1356
   Scenario Outline: Login as a <userType>
     When The user logs in as a "<userType>"
     Then The user is on the "<pageSubTitle>" page

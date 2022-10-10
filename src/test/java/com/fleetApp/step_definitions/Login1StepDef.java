@@ -22,11 +22,13 @@ public class Login1StepDef {
 	@When("The user logs in as a driver")
 	public void the_user_logs_in_as_a_driver() {
 		loginPage.loginAsDriver();
+		homePage.waitUntilLoaderScreenDisappear();
 	}
 
 	@When("The user logs in as a sales manager")
 	public void the_user_logs_in_as_a_sales_manager() {
 		loginPage.loginAsSalesManager();
+		homePage.waitUntilLoaderScreenDisappear();
 	}
 
 	@When("The user logs in as a store manager")

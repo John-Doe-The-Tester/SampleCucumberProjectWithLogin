@@ -4,7 +4,6 @@ Feature: Login 2 - With parameters:
     Given The user is on the login page
 
   #--with String----------------------------
-  @wip
   Scenario: Login as a Driver
     When The user logs in as a "Driver"
     Then The user is on the "Quick Launchpad" page
