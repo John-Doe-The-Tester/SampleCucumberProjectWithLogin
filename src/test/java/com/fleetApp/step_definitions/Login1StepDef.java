@@ -36,8 +36,7 @@ public class Login1StepDef {
 
 	@Then("The user is on the Quick Launchpad page")
 	public void the_user_is_on_the_Quick_Launchpad_page() {
-//		String expectedTitle = "Quick Launchpad";
-		String expectedTitle = "sadsfdsfds";
+		String expectedTitle = "Quick Launchpad";
 		String actualTitle = homePage.getSubtitle();
 		Assert.assertEquals(expectedTitle,actualTitle);
 	}
