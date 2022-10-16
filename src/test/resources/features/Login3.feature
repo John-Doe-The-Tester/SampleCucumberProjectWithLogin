@@ -15,15 +15,15 @@ Feature: Login 3 - With parameters and Scenario Outline
       | Store Manager | Dashboard    |
 
 
-#  Scenario Outline: Can not login with invalid credentials - Negative Scenario
-#    When The user tries to login with "<username>" and "<password>"
-#    Then The user can not login and page title is "Login"
-#
-#    Examples:
-#      | username        | password    |
-#      | salesmanager101 |             |
-#      |                 | UserUser123 |
-#      |                 |             |
-#      | abcdefgh        | UserUser123 |
-#      | storemanager51  | aad3412!    |
-#      | asdaw           | sdf323'+%   |
+  Scenario Outline: Can not login with invalid credentials - Negative Scenario
+    When The user tries to login with "<username>" and "<password>"
+    Then The user can not login and page title is "Login"
+
+    Examples:
+      | username        | password    |
+      | salesmanager101 |             |
+      |                 | UserUser123 |
+      |                 |             |
+      | abcdefgh        | UserUser123 |
+      | storemanager51  | aad3412!    |
+      | asdaw           | sdf323'+%   |

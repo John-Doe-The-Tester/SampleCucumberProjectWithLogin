@@ -1,12 +1,11 @@
 package com.fleetApp.pages;
 
 import com.fleetApp.utilities.ConfigurationReader;
+import com.fleetApp.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class Login2and3Page extends BasePage {
-
-	//---locators----------------
 
 	@FindBy(id = "prependedInput")
 	private WebElement usernameField;
@@ -18,11 +17,8 @@ public class Login2and3Page extends BasePage {
 	private WebElement loginBtn;
 
 
-
-	//---methods-----------------
-
 	public void goLoginPage(){
-		driver.get(ConfigurationReader.get("url"));
+		Driver.get().get(ConfigurationReader.get("url"));
 	}
 
 
@@ -31,15 +27,15 @@ public class Login2and3Page extends BasePage {
 		String password = "";
 		String username = "";
 
-		if (userType.equals("Driver")) {
+		if (userType.equalsIgnoreCase("driver")) {
 			username = ConfigurationReader.get("driver_username");
 			password = ConfigurationReader.get("driver_password");
 		}
-		else if (userType.equals("Sales Manager")) {
+		else if (userType.equalsIgnoreCase("sales manager")) {
 			username = ConfigurationReader.get("sales_manager_username");
 			password = ConfigurationReader.get("sales_manager_password");
 		}
-		else if (userType.equals("Store Manager")) {
+		else if (userType.equalsIgnoreCase("store manager")) {
 			username = ConfigurationReader.get("store_manager_username");
 			password = ConfigurationReader.get("store_manager_password");
 		}
@@ -57,7 +53,7 @@ public class Login2and3Page extends BasePage {
 	}
 
 	public String getPageTitle(){
-		return driver.getTitle();
+		return Driver.get().getTitle();
 	}
 
 

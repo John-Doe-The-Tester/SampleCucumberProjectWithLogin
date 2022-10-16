@@ -1,4 +1,3 @@
-@wip
 Feature: Login 1 - Without any parameter
 
   Background:

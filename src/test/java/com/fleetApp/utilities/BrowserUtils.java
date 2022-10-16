@@ -1,27 +1,31 @@
 package com.fleetApp.utilities;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 public class BrowserUtils {
 
-    /*
-This method will accept int (in seconds) and execute Thread.sleep
-for given duration
- */
-    public static void sleep(int second){
-        second *=1000;
-        try {
-            Thread.sleep(second);
-        }catch (InterruptedException e ) {
 
-        }
-    }
+	public static void wait(int second) {
+		second *= 1000;
+		try {
+			Thread.sleep(second);
+		} catch (InterruptedException ignored) {
+		}
+	}
 
-    /*
-    This method accepts 3 arguments.
-    Arg1: webdriver
-    Arg2: expectedInUrl : for verify if the url contains given String.
-        - If condition matches, will break loop.
-    Arg3: expectedInTitle to be compared against actualTitle
-     */
 
+	//wait for clickability of an element then click
+	public static void clickWithWait(WebElement element, int timeOut) {
+		try {
+			WebDriverWait wait = new WebDriverWait(Driver.get(), timeOut);
+			wait.until(ExpectedConditions.visibilityOf(element));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }
