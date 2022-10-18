@@ -1,4 +1,3 @@
-
 Feature: Login 3 - With parameters and Scenario Outline
 
   Background:
@@ -9,10 +8,10 @@ Feature: Login 3 - With parameters and Scenario Outline
     Then The user is on the "<pageSubTitle>" page
 
     Examples:
-      | userType      | pageSubTitle |
+      | userType      | pageSubTitle    |
       | Driver        | Quick Launchpad |
-      | Sales Manager | Dashboard    |
-      | Store Manager | Dashboard    |
+      | Sales Manager | Dashboard       |
+      | Store Manager | Dashboard       |
 
 
   Scenario Outline: Can not login with invalid credentials - Negative Scenario
@@ -27,3 +26,4 @@ Feature: Login 3 - With parameters and Scenario Outline
       | abcdefgh        | UserUser123 |
       | storemanager51  | aad3412!    |
       | asdaw           | sdf323'+%   |
+

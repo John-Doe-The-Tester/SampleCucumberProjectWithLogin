@@ -20,7 +20,6 @@ public abstract class BasePage {
 	@CacheLookup
 	protected WebElement loaderMask;
 
-
 	/**
 	 * Waits until loader screen present. If loader screen will not pop up at all,
 	 * NoSuchElementException will be handled  bu try/catch block
@@ -55,8 +54,6 @@ public abstract class BasePage {
 	}
 
 
-
-
 	//navigate to any given module and subModule and subModule of subModule
 	public void navigateToModule(String moduleName, String subModuleName, String subSubModuleName) {
 		BrowserUtils.wait(1);
@@ -71,6 +68,7 @@ public abstract class BasePage {
 		WebElement subSubModule = Driver.get().findElement(By.xpath("//span[text()[normalize-space() = '" + subSubModuleName + "']]"));
 		subSubModule.click();
 	}
+
 
 
 }

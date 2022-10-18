@@ -2,6 +2,7 @@ package com.fleetApp.step_definitions;
 
 import com.fleetApp.pages.HomePage;
 import com.fleetApp.pages.LoginPage;
+import com.fleetApp.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -20,18 +21,21 @@ public class LoginStepDef {
 		loginPage.goLoginPage();
 	}
 
+	//feature: login1
 	@When("The user logs in as a driver")
 	public void the_user_logs_in_as_a_driver() {
 		loginPage.loginAsDriver();
 		homePage.waitUntilLoaderScreenDisappear();
 	}
 
+	//feature: login1
 	@When("The user logs in as a sales manager")
 	public void the_user_logs_in_as_a_sales_manager() {
 		loginPage.loginAsSalesManager();
 		homePage.waitUntilLoaderScreenDisappear();
 	}
 
+	//feature: login1
 	@When("The user logs in as a store manager")
 	public void the_user_logs_in_as_a_store_manager() {
 		loginPage.loginAsStoreManager();
@@ -52,6 +56,7 @@ public class LoginStepDef {
 		Assert.assertEquals(expectedTitle,actualTitle);
 	}
 
+	//feature: login2 and login3
 	@When("The user logs in as a {string}")
 	public void the_user_logs_in_as_a(String userType) {
 		loginPage.loginAsUserType(userType);
@@ -78,6 +83,7 @@ public class LoginStepDef {
 	}
 
 
+	//feature: login2
 	@When("The user logs in with following credentials \\(list)")
 	public void the_user_logs_in_with_following_credentials(List<String> credentialsList) {
 		String username = credentialsList.get(0);
@@ -88,6 +94,7 @@ public class LoginStepDef {
 	}
 
 
+	//feature: login2
 	@When("The user logs in with following credentials \\(map)")
 	public void the_user_logs_in_with_following_credentials(Map<String,String > credentialsMap) {
 		String username = credentialsMap.get("username");

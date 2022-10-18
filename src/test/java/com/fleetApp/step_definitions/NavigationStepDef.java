@@ -26,4 +26,5 @@ public class NavigationStepDef {
 		Assert.assertTrue(actualTitle.contains(expectedTitle));
 	}
 
+
 }
