@@ -11,3 +11,5 @@
   (each scenario name must be unique)
 
 6-Make sure you place the tagname before the Feature name or Scenario name
+
+7-Make sure you have correct usage of "given-when-then" keywords
