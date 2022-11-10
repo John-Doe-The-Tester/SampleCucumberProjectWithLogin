@@ -35,21 +35,33 @@ public abstract class BasePage {
 	}
 
 	//returns the title of the page
-	public String getPageTitle(){
+	public String getPageTitle() {
 		BrowserUtils.wait(3);
 		return Driver.getDriver().getTitle();
 	}
 
 
-
 	//navigate to any given module and subModule
 	public void navigateToModule(String moduleName, String subModuleName) { //Fleet - Vehicles
 		BrowserUtils.wait(1);
-		WebElement module = Driver.getDriver().findElement(By.xpath("//span[text()[normalize-space() = '" + moduleName + "']]"));
+		WebElement module = null;
+		try {
+			module = Driver.getDriver().findElement(By.xpath("//span[text()[normalize-space() = '" + moduleName + "']]"));
+		} catch (Exception e) {
+			BrowserUtils.wait(1);
+			module = Driver.getDriver().findElement(By.xpath("//span[text()[normalize-space() = '" + moduleName + "']]"));
+		}
+
 		module.click();
 
+		WebElement subModule = null;
 		BrowserUtils.wait(1);
-		WebElement subModule = Driver.getDriver().findElement(By.xpath("//span[text()[normalize-space() = '" + subModuleName + "']]"));
+		try {
+			subModule = Driver.getDriver().findElement(By.xpath("//span[text()[normalize-space() = '" + subModuleName + "']]"));
+		} catch (Exception e) {
+			BrowserUtils.wait(1);
+			subModule = Driver.getDriver().findElement(By.xpath("//span[text()[normalize-space() = '" + subModuleName + "']]"));
+		}
 		subModule.click();
 	}
 
@@ -68,7 +80,6 @@ public abstract class BasePage {
 		WebElement subSubModule = Driver.getDriver().findElement(By.xpath("//span[text()[normalize-space() = '" + subSubModuleName + "']]"));
 		subSubModule.click();
 	}
-
 
 
 }
